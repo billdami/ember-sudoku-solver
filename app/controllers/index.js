@@ -47,6 +47,12 @@ export default Ember.Controller.extend({
       let grid;
       let filenameParts = filename.split('.');
 
+      this.setProperties({
+        isSolved: false,
+        solveSuccess: false,
+        fileError: null
+      });
+
       if(!success) {
         this.set('fileError', 'Unable to read the selected file.');
         return;
