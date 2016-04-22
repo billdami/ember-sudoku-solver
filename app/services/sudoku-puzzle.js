@@ -220,7 +220,7 @@ export default Ember.Service.extend({
     for(i = 0; i < emptyCells.length;) {
       row = emptyCells[i][0];
       col = emptyCells[i][1];
-      value = result.grid[row][col].value + 1;
+      value = (!result.grid[row][col].value ? 0 : result.grid[row][col].value) + 1;
       cellIsValid = false;
 
       while(!cellIsValid && value <= limit) {
