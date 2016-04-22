@@ -1,0 +1,39 @@
+/**
+ * sudoku-grid component styles
+ *
+ */
+.sudoku-grid-table {
+  border-width: 3px;
+}
+
+.table td.sudoku-grid-cell {
+  padding: 6px;
+  height: 40px;
+  line-height: 28px;
+  font-size: 26px;
+  text-align: center;
+
+  &.prefilled {
+    background-color: #f5f5f5;
+  }
+
+  &:nth-child(3),
+  &:nth-child(6) {
+    border-right-width: 3px;
+  }
+}
+
+.sudoku-grid-row {
+  &:nth-child(3) td.sudoku-grid-cell,
+  &:nth-child(6) td.sudoku-grid-cell {
+    border-bottom-width: 3px;
+  }
+}
+
+@media(min-width: map-get($grid-breakpoints, lg)) {
+  .table td.sudoku-grid-cell {
+    height: 70px;
+    line-height: 58px;
+    font-size: 40px;
+  }
+}

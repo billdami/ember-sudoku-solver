@@ -1,0 +1,18 @@
+/**
+ * ember-sudoku-solver styles
+ *
+ */
+
+//vendor variable overrides
+@import 'variables-vendor';
+
+//vendor
+@import 'bower_components/bootstrap/scss/bootstrap';
+@import 'bower_components/font-awesome/scss/font-awesome';
+
+//app
+@import 'layout';
+
+//components
+@import 'file-input-btn';
+@import 'sudoku-grid';

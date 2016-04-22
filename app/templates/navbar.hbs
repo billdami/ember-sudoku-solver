@@ -1,0 +1,51 @@
+<div class="nav-ct">
+  <div class="collapse hidden-sm-up" id="navbar-collapsed-content">
+    <div class="bg-inverse p-a-1">
+      {{#if puzzleIsLoaded}}
+        <button type="button" class="btn btn-block btn-primary-outline" disabled={{disableSolve}} {{action "solvePuzzle"}}>
+          <i class="fa fa-lightbulb-o"></i> {{if isSolving 'Working...' 'Solve!'}}
+        </button>
+      {{else}}
+        {{#file-input-btn 
+          accept="text/plain" 
+          read-file-as-text=true
+          on-read-file=(action "loadPuzzleFile")
+          btn-classes="btn-block btn-primary-outline"}}
+          <i class="fa fa-upload"></i> Load File
+        {{/file-input-btn}}
+      {{/if}}
+      <button type="button" class="btn btn-block btn-secondary-outline" disabled={{isSolving}} {{action "clearPuzzle"}}>
+        Clear
+      </button>
+    </div>
+  </div>
+  <nav class="navbar navbar-light bg-faded">
+    <button 
+      class="navbar-toggler hidden-sm-up pull-xs-right" 
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#navbar-collapsed-content" 
+      aria-controls="navbar-collapsed-content">
+      &#9776;
+    </button>
+    <span class="navbar-brand"><i class="fa fa-th"></i> <strong>sudoku</strong> solver</span>
+    <div class="pull-xs-right hidden-xs-down">
+      {{#if puzzleIsLoaded}}
+        <button type="button" class="btn btn-primary-outline" disabled={{disableSolve}} {{action "solvePuzzle"}}>
+          <i class="fa fa-lightbulb-o"></i> {{if isSolving 'Working...' 'Solve!'}}
+        </button>
+      {{else}}
+        {{#file-input-btn 
+          accept="text/plain" 
+          read-file-as-text=true
+          on-read-file=(action "loadPuzzleFile")
+          btn-classes="btn-primary-outline"}}
+          <i class="fa fa-upload"></i> Load File
+        {{/file-input-btn}}
+      {{/if}}
+      <button type="button" class="btn btn-secondary-outline" disabled={{isSolving}} {{action "clearPuzzle"}}>
+        Clear
+      </button>
+    </div>
+  </nav>
+</div>

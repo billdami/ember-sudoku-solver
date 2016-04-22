@@ -1,0 +1,23 @@
+{{#if isSolved}}
+  {{#if solveSuccess}}
+    {{#alert-message type="success" closeable=false}}
+      <p>The puzzle was solved successfully! Click 'Download Solution' to download a .txt file containing the completed puzzle.</p>
+      {{#if solvedPuzzleBlob}}
+        <p>
+          {{#file-download-link blob=solvedPuzzleBlob download=solutionFilename class="btn btn-success"}}
+            <i class="fa fa-download"></i> Download Solution
+          {{/file-download-link}}
+        </p>
+      {{/if}}
+    {{/alert-message}}
+  {{else}}
+    {{#alert-message type="danger" closeable=false}}
+      <p>Sorry, it appears that this puzzle does not have a valid solution. :'-(</p>
+    {{/alert-message}}
+  {{/if}}
+{{/if}}
+{{#if fileError}}
+  {{#alert-message type="danger" closeable=false}}
+    <p>{{fileError}}</p>
+  {{/alert-message}}
+{{/if}}

@@ -20,5 +20,18 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  //bootstrap
+  app.import('bower_components/bootstrap/js/dist/util.js');
+  app.import('bower_components/bootstrap/js/dist/collapse.js');
+  app.import('bower_components/bootstrap/js/dist/alert.js');
+
+  //font awesome
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.eot', {destDir: 'assets/fonts'});
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg', {destDir: 'assets/fonts'});
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {destDir: 'assets/fonts'});
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff', {destDir: 'assets/fonts'});
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff2', {destDir: 'assets/fonts'});
+  app.import('bower_components/font-awesome/fonts/FontAwesome.otf', {destDir: 'assets/fonts'});
+
   return app.toTree();
 };

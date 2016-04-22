@@ -1,0 +1,15 @@
+<table class="table table-bordered sudoku-grid-table">
+  <tbody>
+    {{#each grid as |row|}}
+      <tr class="sudoku-grid-row">
+        {{#each row as |col|}}
+          <td class="sudoku-grid-cell {{if col.prefilled 'prefilled' ''}}">
+            {{#if col.value}}
+              {{col.value}}
+            {{/if}}
+          </td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
